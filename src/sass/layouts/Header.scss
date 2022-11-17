@@ -1,0 +1,104 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 80px;
+  height: 70px;
+  width: 100%;
+  background: #fff;
+
+  .header-left {
+    margin-left: 10px;
+
+    .header-logo {
+      width: 100px;
+      height: 34px;
+      background: $secondary;
+    }
+
+    .menu-icon {
+      width: 40px;
+      height: 40px;
+      margin-left: 100px;
+      color: #8b8b8b;
+      cursor: pointer;
+    }
+
+    .menu-icon:hover {
+      font-weight: 800;
+      color: rgb(65, 65, 65);
+    }
+  }
+
+  .header-main {
+    gap: 2rem;
+    margin-right: 8rem;
+
+    .header-search {
+      input {
+        width: 174px;
+        height: 34px;
+        border: 1px solid #d0d0d0;
+        border-radius: 2px;
+        padding: 0 1rem;
+      }
+
+      button {
+        height: 36px;
+      }
+    }
+
+    .header-user {
+      position: relative;
+
+      .user-profile {
+        cursor: pointer;
+
+        .user-logo {
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          background: $secondary;
+        }
+      }
+
+      .user-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        left: -90px;
+        top: 40px;
+        width: 170px;
+        height: 60px;
+        padding: 15px 10px;
+        background: white;
+        border: 1px solid #eee;
+        border-radius: 6px;
+
+        small {
+          text-align: center;
+          color: gray;
+          font-size: 0.9;
+        }
+
+        .user-logout {
+          width: 100%;
+          cursor: pointer;
+
+          h5 {
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+          }
+
+          h5:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
