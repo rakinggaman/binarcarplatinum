@@ -1,20 +1,21 @@
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Login() {
-
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [errMsg, setErrMsg] = useState(false)
   const [logging, setLogging] = useState(false)
 
   const navigate = useNavigate()
 
-  const user = localStorage.getItem("token")
+  const user = localStorage.getItem('token')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLogging(true)
+    setErrMsg(false)
+
     const payload = {
       email,
       password,
@@ -26,66 +27,65 @@ function Login() {
       },
       body: JSON.stringify(payload),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+          return response.json()
+        }
+        throw Error(response.status)
+      })
       .then((data) => {
-        // console.log(data)
         localStorage.setItem('token', data.access_token)
+        setLogging(false)
         navigate('/dashboard')
       })
-      .catch((err) => {
-        console.log(err)
-        if (err.response?.status === 404) {
-          setErrMsg(true)
-        } else if (err.response?.status === 400) {
-          setErrMsg(true)
-        } else {
-          setErrMsg('Login Failed')
-        }
+      .catch((error) => {
+        setErrMsg(true)
+        console.error('Error:', error)
       })
-    setLogging(false)
   }
 
-  if (user) { return navigate('/dashboard') }
+  if (user) {
+    return navigate('/dashboard')
+  }
 
   return (
-    <div className="signin">
-      <div className="left">
-        <img src='img/cover-login.png' alt="cover-login" />
+    <div className='signin'>
+      <div className='left'>
+        <img src='img/cover-login.png' alt='cover-login' />
       </div>
-      <div className="right df-center">
-        <div className="signin-container df-center">
-          <div className="logo">
-            <Link to="/">
+      <div className='right df-center'>
+        <div className='signin-container df-center'>
+          <div className='logo'>
+            <Link to='/'>
               <h3>BCR LOGO</h3>
             </Link>
           </div>
           <h2>Welcome Admin BCR!</h2>
-          <h1>halooo</h1>
-          {errMsg && <Error  />}
-          
-          <form className="form-login" onSubmit={handleSubmit}>
-            <div className="signin-email">
-              <label htmlFor="email">Email</label>
+          {errMsg && <Error />}
+    
+          <form className='form-login' onSubmit={handleSubmit}>
+            <div className='signin-email'>
+              <label htmlFor='email'>Email</label>
               <input
-                id="email"
+                id='email'
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                type="text"
-                autoComplete="off"
+                type='text'
+                autoComplete='off'
                 required
               />
             </div>
-            <div className="signin-password">
-              <label htmlFor="password">Password</label>
+            <div className='signin-password'>
+              <label htmlFor='password'>Password</label>
               <input
-                id="password"
+                id='password'
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-                type="password"
+                type='password'
                 required
               />
             </div>
-            <button className="btn-primary">Sign In</button>
+            <button className='btn-primary'>Sign In</button>
           </form>
 
           {logging && !errMsg && (
@@ -96,13 +96,12 @@ function Login() {
         </div>
       </div>
     </div>
-
   )
 }
 
 const Error = () => {
   return (
-    <div className="error-login-card d-center">
+    <div className='error-login-card d-center'>
       <p>
         Masukkan username dan password yang benar. Perhatikan penggunaan huruf
         kapital.
