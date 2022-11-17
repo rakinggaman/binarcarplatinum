@@ -1,0 +1,10 @@
+.car-add-button {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  button:hover {
+    background: white;
+    color: $primary;
+  }
+}
