@@ -1,0 +1,24 @@
+.car-pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 10px;
+
+  p {
+    margin-top: 20px;
+  }
+
+  button {
+    padding: 0 10px;
+    height: 35px;
+    margin-top: 20px;
+  }
+
+  button[disabled] {
+    background: transparent;
+    color: $primary;
+    opacity: 0.5;
+    cursor: default;
+  }
+}
