@@ -57,7 +57,7 @@ function Login() {
         <div className='signin-container df-center'>
           <div className='logo'>
             <Link to='/'>
-              <h3>BCR LOGO</h3>
+              <h3>BCR LOGOSS</h3>
             </Link>
           </div>
           <h2>Welcome Admin BCR!</h2>
