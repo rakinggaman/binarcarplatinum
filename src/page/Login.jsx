@@ -60,6 +60,7 @@ function Login() {
             </Link>
           </div>
           <h2>Welcome Admin BCR!</h2>
+          <h1>halooo</h1>
           {errMsg && <Error  />}
           
           <form className="form-login" onSubmit={handleSubmit}>
