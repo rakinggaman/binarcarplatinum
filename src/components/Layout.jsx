@@ -3,7 +3,7 @@ import { useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux'
 import { hidden } from '../features/navbar/navbarSlice'
-import  { Toaster } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 const Layout = ({ children }) => {
 
   return (
@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       <Sidebar />
       <div className="page-content">{children}</div>
       <Header />
-      <Toaster/>
+      <Toaster />
     </div>
   )
 }
@@ -51,7 +51,7 @@ const Header = () => {
           <div className="header-user">
             <div onClick={handleShowProfile} className="user-profile df-center">
               <div className="user-logo df-center">
-                <p>A</p>
+                <p>R</p>
               </div>
               <UilAngleDown />
             </div>
