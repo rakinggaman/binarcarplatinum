@@ -17,6 +17,7 @@ const Layout = ({ children }) => {
 }
 
 const Header = () => {
+  console.log('tes')
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [showProfile, setShowProfile] = useState(false)
