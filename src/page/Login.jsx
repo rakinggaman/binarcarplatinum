@@ -57,7 +57,7 @@ function Login() {
         <div className='signin-container df-center'>
           <div className='logo'>
             <Link to='/'>
-              <h3>BCR LOGOSS</h3>
+              <h3></h3>
             </Link>
           </div>
           <h2>Welcome Admin BCR!</h2>
@@ -70,6 +70,7 @@ function Login() {
                 id='email'
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
+                placeholder='Contoh: johndee@gmail.com'
                 type='text'
                 autoComplete='off'
                 required
@@ -82,6 +83,7 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 type='password'
+                placeholder='6+ karakter'
                 required
               />
             </div>
