@@ -70,7 +70,7 @@ const getOrders = async () => {
 }
 
 const ListTable = () => {
-
+  console.log('wkwk')
   const { data, isLoading } = useQuery(["orders"], () => getOrders(),
     { keepPreviousData: true }
   )
