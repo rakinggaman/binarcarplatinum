@@ -15,6 +15,7 @@ import CarEdit from "./page/CarEdit"
 import './index.scss'
 
 import { store } from './app/store'
+import SearchResult from "./page/SearchResult"
 
 const queryClient = new QueryClient()
 
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="cars" element={<Cars />} />
               <Route path="cars/add-car" element={<CarCreate />} />
               <Route path="cars/edit-car/:id" element={<CarEdit />} />
+              <Route path="cars/search/:query" element={<SearchResult />} />
               <Route path="*" element={<Navigate to="dashboard" replace />} />
             </Routes>
           </Layout>

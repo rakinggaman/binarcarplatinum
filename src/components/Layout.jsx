@@ -4,6 +4,10 @@ import { NavLink, useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux'
 import { hidden } from '../features/navbar/navbarSlice'
 import { Toaster } from 'react-hot-toast'
+import { access_token } from '../utils'
+import { useQuery } from '@tanstack/react-query'
+
+
 const Layout = ({ children }) => {
 
   return (
@@ -17,7 +21,6 @@ const Layout = ({ children }) => {
 }
 
 const Header = () => {
-  console.log('tes')
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [showProfile, setShowProfile] = useState(false)
@@ -43,16 +46,11 @@ const Header = () => {
           </button>
         </div>
         <div className="header-main df-center">
-          <div className="header-search df-center">
-            <input type="search" placeholder="Search" />
-            <button className="btn-outlined-primary">
-              Search
-            </button>
-          </div>
+          <Search />
           <div className="header-user">
             <div onClick={handleShowProfile} className="user-profile df-center">
               <div className="user-logo df-center">
-                <p>R</p>
+                <p>A</p>
               </div>
               <UilAngleDown />
             </div>
@@ -93,6 +91,30 @@ const Sidebar = () => {
         </NavLink>
       </div>
     </aside>
+  )
+}
+
+
+const Search = () => {
+  const [query, setQuery] = useState('')
+
+  const navigate = useNavigate()
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    navigate(`/cars/search/${query}`)
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="header-search df-center">
+      <input type="search" placeholder="Search"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <button className="btn-outlined-primary">
+        Search
+      </button>
+    </form>
   )
 }
 
