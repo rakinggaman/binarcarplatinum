@@ -1,18 +1,18 @@
 .car-card__container {
+  width: 100%;
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  row-gap: 24px;
-  column-gap: 35px;
-  max-width: 1300px;
+  justify-content: space-between;
 
   .car-card {
     background: white;
-    width: 320px;
+    width: 195px;
     height: 500px;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     padding: 2rem;
+    margin-bottom: 20px;
 
     .car-card__body {
       height: 100%;
@@ -22,16 +22,16 @@
       justify-content: space-between;
 
       .car-card__image {
-        width: 303px;
+        width: 200px;
         height: 222px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: auto;
+        margin: 0 auto;
         // overflow: hidden;
 
         img {
-          min-width: 303px;
+          min-width: 100px;
           max-height: 222px;
           width: 100%;
           object-fit: cover;
