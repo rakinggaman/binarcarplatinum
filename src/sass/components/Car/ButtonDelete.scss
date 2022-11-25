@@ -1,11 +1,12 @@
 .button-delete {
-  width: 144px;
-  height: 48px;
+  width: 100px;
+  height: 40px;
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  margin-right: 10px;
 
   p {
     font-weight: 700;
