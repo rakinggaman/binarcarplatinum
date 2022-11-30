@@ -8,6 +8,7 @@ import { useTransition, animated } from 'react-spring'
 import { useSelector } from "react-redux";
 
 
+
 const notify = () =>
   toast('Data Berhasil Disimpan', {
     duration: 4000,
@@ -68,6 +69,8 @@ const CarCreate = () => {
     navigate('/cars')
   }
 
+
+
   return (
     <div className="add-car-page">
       {transition(
@@ -120,7 +123,8 @@ const CarCreate = () => {
                   <label>
                     Foto<span>*</span>
                   </label>
-                  <input onChange={onImageUpload} type='file' required />
+                  <input className='input' onChange={onImageUpload} type='file' required />
+                  
                 </div>
                 <div>
                   <label>
