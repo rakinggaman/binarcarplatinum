@@ -32,6 +32,7 @@ const Header = () => {
 
   // logout function
   const handleLogout = () => {
+    setShowProfile(!showProfile)
     localStorage.removeItem("token")
     navigate("/login")
   }
