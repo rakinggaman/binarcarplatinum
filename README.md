@@ -1,9 +1,15 @@
 This project was created for the final exam of the Platinum Challenge Binar academy Bootcamp level. On this project contains web Admin for car rental. The project starts from October 11, 2022 until the end of December 5, 2022
 
-This project is assessed and guided by the Facilitator https://github.com/aramadsanar
+Link Vercel Public:
+https://rental-public.vercel.app/
 
-Link Vercel Admin:
-https://binar-car-rental-admin-fer-wave-3.vercel.app/
+This project is assessed and guided by the Facilitator Armada Afga Adrian Nasar
+
+Link Linkedin:
+https://www.linkedin.com/in/armada-afga-adrian-nasar/
+
+Link github :
+https://github.com/aramadsanar
 
 # Getting Started with Create React App
 
