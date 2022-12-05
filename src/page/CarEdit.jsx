@@ -199,7 +199,7 @@ const Edit = (props) => {
               </div>
               <div className="form-upload">
                 <label>Foto</label>
-                <input onChange={onImageUpload} type="file" />
+                <input className="input" onChange={onImageUpload} type="file" />
               </div>
               <div>
                 <label>

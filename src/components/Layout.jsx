@@ -1,5 +1,5 @@
 import { UilAngleDown, UilBars, UilEstate, UilTruck } from '@iconscout/react-unicons'
-import { useState } from "react"
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux'
 import { hidden } from '../features/navbar/navbarSlice'
@@ -32,6 +32,7 @@ const Header = () => {
 
   // logout function
   const handleLogout = () => {
+    setShowProfile(!showProfile)
     localStorage.removeItem("token")
     navigate("/login")
   }
