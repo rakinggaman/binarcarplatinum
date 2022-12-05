@@ -2,8 +2,8 @@ This project was created for the final exam of the Platinum Challenge Binar acad
 
 This project is assessed and guided by the Facilitator https://github.com/aramadsanar
 
-Link Vercel Public:
-https://rental-public.vercel.app/
+Link Vercel Admin:
+https://binar-car-rental-admin-fer-wave-3.vercel.app/
 
 # Getting Started with Create React App
 
