@@ -160,7 +160,7 @@ const ListHeader = ({ setCategory, setPage, page, data }) => {
         <div className="car-list-title-container">
           <h2>List Car</h2>
           <Link to="add-car">
-            <button className="btn-primary ">
+            <button className="btn-primary">
               <UilPlus />
               <p>Add New Car</p>
             </button>
